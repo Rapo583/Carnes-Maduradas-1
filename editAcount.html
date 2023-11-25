@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Curso Practico FrontenDeveloper/fonts/Quicksand/static/Quicksand-Bold.ttf">
+    <link rel="stylesheet" href="../Curso Practico FrontenDeveloper/fonts/Quicksand/static/Quicksand-Light.ttf">
+    <link rel="stylesheet" href="../Curso Practico FrontenDeveloper/fonts/Quicksand/static/Quicksand-Medium.ttf">
+    <style>
+        /* Para que el navegador reconozca la fuente */
+        @font-face{
+            font-family: 'Quicksand';
+            src: url('fonts/Quicksand/static/Quicksand-Regular.ttf');
+        }
+        :root{
+            --black:#000000;
+            --white:#FFFFFF;
+            --very-light-pink:#9e479e;
+            --text-input-field:#c6c3c3b7;
+            --hospital-green:rgb(90, 181, 131);
+            --sm:14px;
+            --md:16px;
+            --lg:18px;
+        }
+        body{
+            margin: 0;
+            font-family: 'Quicksand';
+        }
+        .login{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center; /* centra contenido en eje x y eje y */
+            /* place-items: center stretch;
+                place-items: center start;
+                place-items: start end;
+                place-items: end center; */
+        }
+        .container{
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 300px;
+        }
+        .logo{
+            width: 150px;
+            margin-bottom: 50px;
+            justify-self: center;
+            display: none;
+        }
+        .title{
+            font-size: var(--lg);
+            margin-bottom: 40px;
+            text-align: start;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;    
+        }
+        .form div{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .label{
+            font-size: var(--sm);
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .value{
+            color: var(--very-light-pink);
+            font-size: var(--md);
+            margin: 8px 0 32px 0;
+        }
+        .secondary-button{
+            background-color: var(--white);
+            border-radius: 8px;
+            border:1px solid var(--hospital-green);
+            color: var(--hospital-green);
+            width: 100%;
+            height: 50px;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+        }
+        .login-button{
+            margin-top: 14px;
+            margin-bottom: 35px;
+        }
+        @media (max-width:640px){
+            .container{
+                height: 100%;
+            }
+            .form{
+                height: 100%;
+                justify-content: space-between;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div class="container">
+            
+            <h1 class="title">My account</h1>
+            <form action="/" class="form">
+                <div >
+                    <label for="name" class="label">Name</label>
+                    <p class="value">Camilo Marín</p>
+
+                    <label for="email" class="label">email</label>
+                    <p class="value">camdresmarin@gmail.com</p>
+
+                    <label for="password" class="label">Password</label>
+                    <p class="value">**********</p>
+                </div>
+                <!-- En formularios losinut pueden ser de tipo butom cambiand el type a submit -->
+                <input type="submit" value="Edit" class="secondary-button login-button">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!-- https://polaris.shopify.com/components -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Curso Practico FrontenDeveloper/fonts/Quicksand/static/Quicksand-Bold.ttf">
+    <link rel="stylesheet" href="../Curso Practico FrontenDeveloper/fonts/Quicksand/static/Quicksand-Light.ttf">
+    <link rel="stylesheet" href="../Curso Practico FrontenDeveloper/fonts/Quicksand/static/Quicksand-Medium.ttf">
+    <style>
+        /* Para que el navegador reconozca la fuente */
+        @font-face{
+            font-family: 'Quicksand';
+            src: url('fonts/Quicksand/static/Quicksand-Regular.ttf');
+        }
+        :root{
+            --black:#000000;
+            --white:#FFFFFF;
+            --very-light-pink:#9e479e;
+            --text-input-field:#c6c3c3b7;
+            --hospital-green:rgb(90, 181, 131);
+            --sm:14px;
+            --md:16px;
+            --lg:18px;
+        }
+        body{
+            margin: 0;
+            font-family: 'Quicksand';
+        }
+        .login{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center; /* centra contenido en eje x y eje y */
+            /* place-items: center stretch;
+                place-items: center start;
+                place-items: start end;
+                place-items: end center; */
+        }
+        .container{
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 300px;
+            justify-items: center;
+
+        }
+        .logo{
+            width: 150px;
+            margin-bottom: 50px;
+            justify-self: center;
+            display: none;
+        }
+        form{
+            display: flex;
+            flex-direction: column;    
+        }
+        form .primary-button{
+            background-color: var(--white);
+            color: brown;
+            border-radius: 8px;
+            border:0.5px solid brown;
+            width: 100%;
+            height: 50px;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            text-align: center;
+            justify-content: center;
+            margin-bottom: 52px;
+            padding: 15px;
+        }
+        .title{
+            font-size: var(--lg);
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .subtitle{
+            color: brown;
+            font-size: var(--md);
+            font-weight: 300;
+            margin-top: 0;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+        .email-image{
+            width: 132px;
+            height: 132px;
+            border-radius: 50%;
+            background-color: brown;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .email-image img{
+            width: 80px;
+        }
+        .resend{
+            font-size: var(--sm);
+        }
+        .resend span{
+            color: brown;
+            font-weight: bold;
+        }
+        .resend a{
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .resend a:hover{
+            color: rgb(243, 204, 29);
+        }
+        .primary-button:hover{
+            background-color: rgb(243, 204, 29);
+            color: var(--white);
+            border: none;
+        }
+        .login-button{
+            margin-top: 14px;
+            margin-bottom: 35px;
+        }
+        @media (max-width:640px){
+            .logo{
+                display: block;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div class="container">
+            <img src="Assets/logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <h1 class="title">email has been sent</h1>
+            <p class="subtitle">Please check your inbox for instructions on how to reset the Password</p>
+            <div class="email-image">
+                <img src="Assets/icons/email.svg" alt="email-image">
+            </div>
+            <form action="login.html">
+                <input type="submit" value="Iniciar Sesión" class="primary-button login-button">
+            </form>
+            <p class="resend">
+                <span>Din't receive the email?</span>
+                <a href="/">Resend</a>
+        </p>
+        </div>
+    </div>
+</body>
+</html>

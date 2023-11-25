@@ -1,0 +1,304 @@
+<!-- https://polaris.shopify.com/components -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Curso Practico FrontenDeveloper/fonts/Quicksand/static/Quicksand-Bold.ttf">
+    <link rel="stylesheet" href="../Curso Practico FrontenDeveloper/fonts/Quicksand/static/Quicksand-Light.ttf">
+    <link rel="stylesheet" href="../Curso Practico FrontenDeveloper/fonts/Quicksand/static/Quicksand-Medium.ttf">
+    <style>
+        /* Para que el navegador reconozca la fuente */
+        @font-face{
+            font-family: 'Quicksand';
+            src: url('fonts/Quicksand/static/Quicksand-Regular.ttf');
+        }
+        :root{
+            --black:#000000;
+            --white:#FFFFFF;
+            --very-light-pink:#9e479e;
+            --text-input-field:#c6c3c3b7;
+            --hospital-green:rgb(90, 181, 131);
+            --sm:14px;
+            --md:16px;
+            --lg:18px;
+        }
+        body{
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .desktop-menu{
+            width: 100px;
+            height: auto;
+            border: 1px solid var(--very-light-pink);
+            border-radius: 6px;
+            padding: 20px 20px 0 20px;
+        }
+        .desktop-menu ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .desktop-menu ul li{
+            text-align: end;
+        }
+        .desktop-menu ul li:nth-child(1), .desktop-menu ul li:nth-child(2){
+            font-weight: bold;
+        }
+        .desktop-menu ul li:last-child{
+            padding-top: 20px;
+            border-top: 1px solid var(--very-light-pink);
+        }
+        .desktop-menu ul li:last-child a{
+            color: var(--hospital-green);
+            font-size: var(--sm);
+        }
+        .desktop-menu ul li a{
+            color: var(--black);
+            text-decoration: none;
+            margin-bottom: 20px;/* Los objetos en linea no es posible aplicarles margin */
+            /* Para esto debemos decirle que sea un elemento inline pro que tenga caracteristicas de en bloque */
+            display: inline-block;
+            font-size: var(--md);
+        }
+        .cards-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 240px); /* repeat(#column requeridas, tamaño cada column) */
+            gap: 20px;
+            place-content: center; /* Centra todo el contenido */
+        }
+        .product-card{
+            width: 240px;
+        }
+        .product-card img{
+            width: 100%;
+            height: 240px;
+            border-radius: 20px;
+            object-fit: cover; /* Imagen obtiene tamaño realindepenientemente del width y height */
+        }
+        .product-info{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+        }
+        .product-info figure{
+            margin: 0;
+        }
+        .product-info figure img{
+            width: 35px;
+            height: 35px;
+        }
+        .product-info div p:nth-child(1){
+            font-weight: bold;
+            font-size: var(--md);
+            margin-top: 0;
+            margin-bottom: 4px;
+        }
+        .product-info div p:nth-child(2){
+            font-size: var(--sm);
+            margin-top: 0;
+            margin-bottom: 0;
+            color: var(--very-light-pink);
+        }
+        @media (min-width:640px){
+            .mobile-menu{
+                display: none;
+            }
+        }
+        @media (max-width:640px){
+            .cards-container{
+                grid-template-columns: repeat(auto-fill, 140px);
+                gap: 20px;
+            }
+            .product-card{
+                width: 140px;
+            }
+            .product-card img{
+                width: 140px;
+                height: 140px;
+            }
+            .desktop-menu{
+                display: none;
+            }
+            .mobile-menu{
+                margin-bottom: 240px;
+                padding: 24px;
+                display: grid;
+                
+            }
+            .mobile-menu a{
+                text-decoration: none;
+                color: var(--black);
+                font-weight: bold; /* Hace letra mas negrita */
+            }
+            .mobile-menu ul{
+                padding: 0;
+                margin: 24px 0 0;
+                list-style: none;
+            }
+            .mobile-menu ul:nth-child(1){
+                border-bottom: 1px solid var(--very-light-pink);
+            }
+            .mobile-menu ul:nth-child(3) {
+                position: absolute;
+                bottom: 320px;
+            }
+            .mobile-menu ul li{
+                margin-bottom: 24px;
+            }
+            .email{
+                font-size: var(--sm);
+                font-weight: 300 !important; /* debido a los pesos y especificidad e hace necesario ejecutar la accion con important */
+            }
+            .sing-out{
+                font-size: var(--sm);
+                color: var(--hospital-green) !important;
+            }
+            
+
+        }
+    </style>
+</head>
+<body>
+    <section class="main-container">
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="/">Categories</a></li>
+                <li><a href="/">All</a></li>
+                <li><a href="/">Clothes</a></li>
+                <li><a href="/">Electronics</a></li>
+                <li><a href="/">Furnitures</a></li>
+                <li><a href="/">Others</a></li>
+            </ul>
+            <ul>
+                <li><a href="/">My orders</a></li>
+                <li><a href="/">My account</a></li>
+            </ul>
+            <ul>
+                <li><a href="/" class="email">camdresmarin@gmail.com</a></li>
+                <li><a href="/" class="sing-out">Sing out</a></li>
+            </ul>
+        </div>
+        <div class="desktop-menu">
+            <ul>
+                <li><a href="/" class="title">My orders</a></li>
+                <li><a href="/">My acount</a></li>
+                <li><a href="/">sing out</a></li>
+            </ul>
+        </div>
+        <div class="cards-container">
+            <div class="product-card">
+                <img src="Assets/img/carnicos.jpg" alt="carnicos" class="product-img">
+                <div class="product-info">
+                    <div>
+                        <p>$120</p>
+                        <p>Bike</p>
+                    </div>
+                    <figure>
+                        <img src="Assets/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div> 
+            </div>
+            <div class="product-card">
+                <img src="Assets/img/desayuno.jpg" alt="" class="product-img">
+                <div class="product-info">
+                    <div>
+                        <p>$120</p>
+                        <p>Bike</p>
+                    </div>
+                    <figure>
+                        <img src="Assets/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="Assets/img/carnicos.jpg" alt="carnicos" class="product-img">
+                <div class="product-info">
+                    <div>
+                        <p>$120</p>
+                        <p>Bike</p>
+                    </div>
+                    <figure>
+                        <img src="Assets/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div> 
+            </div>
+            <div class="product-card">
+                <img src="Assets/img/carnicos.jpg" alt="carnicos" class="product-img">
+                <div class="product-info">
+                    <div>
+                        <p>$120</p>
+                        <p>Bike</p>
+                    </div>
+                    <figure>
+                        <img src="Assets/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div> 
+            </div>
+            <div class="product-card">
+                <img src="Assets/img/carnicos.jpg" alt="carnicos" class="product-img">
+                <div class="product-info">
+                    <div>
+                        <p>$120</p>
+                        <p>Bike</p>
+                    </div>
+                    <figure>
+                        <img src="Assets/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div> 
+            </div>
+            <div class="product-card">
+                <img src="Assets/img/carnicos.jpg" alt="carnicos" class="product-img">
+                <div class="product-info">
+                    <div>
+                        <p>$120</p>
+                        <p>Bike</p>
+                    </div>
+                    <figure>
+                        <img src="Assets/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div> 
+            </div>
+            <div class="product-card">
+                <img src="Assets/img/carnicos.jpg" alt="carnicos" class="product-img">
+                <div class="product-info">
+                    <div>
+                        <p>$120</p>
+                        <p>Bike</p>
+                    </div>
+                    <figure>
+                        <img src="Assets/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div> 
+            </div>
+            <div class="product-card">
+                <img src="Assets/img/carnicos.jpg" alt="carnicos" class="product-img">
+                <div class="product-info">
+                    <div>
+                        <p>$120</p>
+                        <p>Bike</p>
+                    </div>
+                    <figure>
+                        <img src="Assets/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div> 
+            </div>
+            <div class="product-card">
+                <img src="Assets/img/carnicos.jpg" alt="carnicos" class="product-img">
+                <div class="product-info">
+                    <div>
+                        <p>$120</p>
+                        <p>Bike</p>
+                    </div>
+                    <figure>
+                        <img src="Assets/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div> 
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
